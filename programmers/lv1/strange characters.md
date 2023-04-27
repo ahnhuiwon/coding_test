@@ -27,24 +27,35 @@ solution을 완성하세요.
 
 <br />
 
-### 테스트 통과 코드
+### 테스트 통과 코드 및 해설
 
 ```
 function solution(s) {
     var answer = '';
     var count = 0;
     
+    
+    // 파라미터로 받아온 문자열 데이터 s의 길이만큼 반복합니다.
     for(let i=0; i < s.length; i++) {
+    
+        // s[i] 데이터가 띄어쓰기(공백)이 아닐 경우 다음 조건문을 실행합니다. 
         if(s[i] != ' ') {
+        
+            // count 데이터가 짝수라면 대문자로 변환합니다.
             if(count % 2 == 0) {
                 answer += s[i].toUpperCase();
             }
+            
+            // count 데이터가 홀수라면 소문자로 변환합니다.
             if(count % 2 != 0) {
                 answer += s[i].toLowerCase();
             }
             
+            // count 증가
             count++;
         } else {
+        
+            // s[i] 데이터가 띄어쓰기(공백)일 경우 띄어쓰기를 answer에 += 한 뒤 count를 다시 0으로 돌립니다.
             answer += ' '
             count = 0;
         }
@@ -57,10 +68,3 @@ function solution(s) {
 ```
 
 <br />
-
-**해설**
-
- - 파라미터로 받아온 문자열 데이터 s의 길이만큼 반복합니다.
- - s[i] 데이터가 띄어쓰기(공백)이 아닐 경우 다음 조건문을 실행합니다. 
- - count 데이터가 짝수라면 대문자, 홀수라면 소문자로 변환을 한 뒤 count를 증가합니다.
- - s[i] 데이터가 띄어쓰기(공백)일 경우 띄어쓰기를 answer에 += 한 뒤 count를 다시 0으로 돌립니다.
